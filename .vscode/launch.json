@@ -1,0 +1,39 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "compounds": [
+        {
+            "name": "PWA_DEV",
+             "configurations": ["Build PWA", "Launch PWA" ]
+        },
+        {
+            "name": "PWA_PROD",
+             "configurations": ["Publish PWA"]
+        }
+    ],
+    "configurations": [
+        {
+            "name": "Build PWA",
+            "request": "launch",
+            "type": "node-terminal",
+            "command": "npm run dev"
+        },
+        {
+            "name": "Launch PWA",
+            "request": "launch",
+            "type": "pwa-chrome",
+            "url": "http://localhost:3004",
+            "webRoot": "${workspaceFolder}/public",
+            "sourceMaps": true,
+            "runtimeArgs": ["--remote-debugging-port=9222"]
+        },
+        {
+            "name": "Publish PWA",
+            "request": "launch",
+            "type": "node-terminal",
+            "command": "npm run production"
+        },
+    ]
+}
